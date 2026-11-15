@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>赛题通 · 2026 OceanBase 数据库大赛</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div><span class="logo">赛题通</span><span class="sub">2026 OceanBase 数据库大赛 · 知识库 / 选题进度 / 下一步</span></div>
+  <div class="health" id="health">加载中…</div>
+</header>
+
+<section class="teambar">
+  <label for="team-select">队伍</label>
+  <select id="team-select"><option value="">（未选择）</option></select>
+  <form id="team-new" class="row">
+    <input id="team-name" placeholder="新队名，建档后可跨设备保留" maxlength="60" size="20">
+    <button class="ghost" type="submit">建档</button>
+  </form>
+  <span class="chips" id="team-tracks"></span>
+  <span style="margin-left:auto"><a href="/stats">运行指标</a> · <a href="/docs">API</a></span>
+</section>
+
+<nav class="tabs" id="tabs">
+  <button data-tab="kb" class="on" type="button">知识库检索</button>
+  <button data-tab="ask" type="button">问答</button>
+  <button data-tab="prog" type="button">赛题进度</button>
+  <button data-tab="next" type="button">下一步</button>
+</nav>
+
+<main>
+  <section class="panel on" id="tab-kb">
+    <form class="row" id="search-form">
+      <input id="search-q" placeholder="检索赛题文档，如：seekdb 混合检索 权重 / 提交材料" maxlength="300" size="46" required>
+      <label class="meta">返回 <input id="search-k" type="number" min="1" max="20" value="6" style="width:60px"></label>
+      <button type="submit">搜索</button>
+      <button class="ghost" id="search-empty" type="button">清空</button>
+    </form>
+    <div class="chips" id="search-tracks"></div>
+    <div class="meta" id="search-meta"></div>
+    <div id="search-hits"></div>
+  </section>
+
+  <section class="panel" id="tab-ask">
+    <form id="ask-form">
+      <textarea id="ask-q" rows="3" placeholder="例：PowerContext 赛题八要求什么？离提交还有几天？" maxlength="300" required></textarea>
+      <div class="row" style="margin-top:8px">
+        <label class="meta"><input type="checkbox" id="ask-team" checked> 带上当前队伍上下文</label>
+        <label class="meta"><input type="checkbox" id="ask-tracks"> 限定在当前队伍赛道</label>
+        <button type="submit">提问</button>
+      </div>
+    </form>
+    <div class="meta" id="ask-meta"></div>
+    <div id="ask-out"></div>
+  </section>
+
+  <section class="panel" id="tab-prog">
+    <div class="meta" id="prog-hint"></div>
+    <h3>选题</h3>
+    <div class="meta">勾选要做的赛题并保存；取消勾选等于放弃该赛题。</div>
+    <div id="picker"></div>
+    <form class="row" id="custom-form">
+      <select id="custom-track"></select>
+      <input id="custom-topic" placeholder="自定义赛题名（文档里没有时）" maxlength="120" size="28">
+      <button class="ghost" type="submit">添加</button>
+      <button id="save-selection" type="button">保存选题</button>
+    </form>
+    <h3>进度与卡点</h3>
+    <div id="progress"></div>
+  </section>
+
+  <section class="panel" id="tab-next">
+    <div class="row"><button id="next-refresh" type="button">刷新待办</button><span class="meta" id="next-meta"></span></div>
+    <div id="next-body"></div>
+  </section>
+</main>
+
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>

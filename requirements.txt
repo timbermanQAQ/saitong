@@ -1,0 +1,13 @@
+# 赛题通运行时依赖（版本与本机开发环境 /home/claude/mmvenv 对齐）
+fastapi==0.162.1
+uvicorn==0.54.0
+pyseekdb==1.4.0.post1
+powercontext[cli,server]==1.5.0
+httpx==0.28.1
+openai==3.46.0
+python-dotenv==1.2.4
+# 检索词的中文分词（kb.py 直接 import；powercontext 也带，但这里显式锁定版本）
+jieba==0.42.1
+
+# 测试
+pytest==9.2.0

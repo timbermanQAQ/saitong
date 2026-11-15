@@ -1,0 +1,16 @@
+# 构建上下文：只送源码与语料，运行产物和本机凭据不进镜像
+.git
+.gitignore
+.env
+.env.*
+!.env.example
+.venv*/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.runtime/
+data/log/
+logs/
+*.log
+Dockerfile

@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>赛题通 · 2026 OceanBase 数据库大赛参赛工具箱</title>
+<meta name="description" content="赛题通：把大赛语雀文档做成本地可检索的知识库，跨文档问答带原文链接；队伍选题、进度、卡点存在 PowerContext 里，重启不丢。">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap nav">
+    <span class="brand">赛题通 <em>SaiTong</em></span>
+    <nav aria-label="页面导航">
+      <a href="#problem">解决什么</a>
+      <a href="#features">功能</a>
+      <a href="#arch">技术架构</a>
+      <a href="#qoder">开发过程</a>
+      <a href="#verify">怎么验证</a>
+      <a href="#use">怎么用</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <h1>一句话讲完：<br>把 60 篇赛题文档变成能问、能查、能追进度的一个页面。</h1>
+    <p class="lead">
+      面向 2026 OceanBase 数据库大赛参赛队伍的资料检索 + 进度跟踪单页应用。
+      语雀文档灌进 <strong>seekdb</strong> 做混合检索，队伍状态存进 <strong>PowerContext</strong> 做长期记忆，
+      每条答案都附原文链接；不配置任何 LLM Key 也能完整跑起来。
+    </p>
+    <ul class="chips" aria-label="技术标签">
+      <li>seekdb 混合检索</li><li>PowerContext 记忆</li><li>FastAPI</li><li>无构建前端</li><li>单容器部署</li>
+    </ul>
+    <p class="cta">
+      <a class="btn primary" href="https://github.com/timbermanQAQ/saitong">代码仓库</a>
+      <a class="btn" href="https://modelscope.cn/studios/Timberman/saitong">在线体验（部署中）</a>
+    </p>
+  </section>
+
+  <section id="problem" class="band">
+    <h2>解决的问题</h2>
+    <div class="cols">
+      <div class="card">
+        <h3>资料散在语雀约 60 篇文档里</h3>
+        <p>
+          赛题、算分规则、提交材料、各企业赛道说明分别成篇，
+          一个「这个题要交什么」要翻四五个页面，还说不清依据是哪一份文档写的。
+        </p>
+        <p class="fix">→ 一次提问跨文档拿答案，答案下每条来源都能点开核对到原文段落。</p>
+      </div>
+      <div class="card">
+        <h3>队伍进度无处记</h3>
+        <p>
+          勾了哪些题、做到哪一步、卡在哪儿，通常散在群聊和各自的备忘里；
+          换个人接手、或者过两天回头看，就对不上状态了。
+        </p>
+        <p class="fix">→ 每支队伍一份档案，选题 / 进度 / 卡点写进 PowerContext，服务重启后还在。</p>
+      </div>
+      <div class="card">
+        <h3>「下一步该做什么」要自己拼</h3>
+        <p>
+          截止时间、每道未完成的题要交的材料，得反复翻文档确认，容易漏。
+        </p>
+        <p class="fix">→ 下一步页按未完成赛题从文档里抽待办，附倒计时与出处。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="band">
+    <h2>核心功能</h2>
+    <div class="shots">
+      <figure>
+        <img src="assets/01_search.png" alt="知识库检索页：搜索「提交材料」后的跨文档命中结果，每条带赛道标签与原文链接" loading="lazy" width="1280" height="800">
+        <figcaption><b>知识库检索</b>：全文 + 向量混合检索，可按赛道过滤，每条命中带出处链接与块 id，右侧能看到当次查询的实际参数。</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/02_ask.png" alt="问答页：提问后给出的答案，句末带来源编号，下方列出可点开的来源片段" loading="lazy" width="1280" height="800">
+        <figcaption><b>跨文档问答</b>：配了 LLM 就生成带 <code>[1][2]</code> 引用的答案；没配 Key 自动退化为抽取式回答，并把原因写在提示里——不假装是模型生成的。</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/03_progress.png" alt="赛题进度页：赛道展开后勾选赛题，逐个设置状态与备注，记录卡点" loading="lazy" width="1280" height="800">
+        <figcaption><b>赛题进度</b>：勾选题目、改状态（待办 / 进行中 / 阻塞 / 完成）、写备注、记卡点；同一道题只保留最新一条有效记录。</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/04_next.png" alt="下一步页：未完成赛题的待办清单与距提交倒计时" loading="lazy" width="1280" height="800">
+        <figcaption><b>下一步</b>：未完成赛题 + 从文档抽出的「要交什么」，附距提交天数；标成已完成的题自动从待办里消失。</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/05_stats.png" alt="运行统计页：提问与检索次数、热门问题、赛道块数分布与三份调用日志" loading="lazy" width="1280" height="800">
+        <figcaption><b>可核对性</b>：每次 seekdb / PowerContext / LLM 调用各留一行 JSONL 日志，统计页能当场看到，不靠口头说「我测过了」。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="arch" class="band">
+    <h2>技术架构：两个引擎各干各自擅长的事</h2>
+    <div class="cols two">
+      <div class="card">
+        <h3>seekdb 负责「资料」</h3>
+        <ul>
+          <li><b>嵌入式</b>：索引就是本地一个目录，没有独立服务要维护，容器里一起走。</li>
+          <li><b>全文 + 向量混合检索</b>：一次 <code>hybrid_search</code> 由服务端做 RRF 融合；中文分词用 jieba 加领域词典构造检索词，「提交材料」不会被切成「提交」「材料」。</li>
+          <li><b>按赛道过滤</b>：块上带 <code>track</code> 元数据，问 MiniMax 就不要把 AMD 的文档顶上来。</li>
+          <li><b>弱向量兜底</b>：一个查询词都不含的纯向量命中会被丢掉（日志字段 <code>dropped_no_overlap</code>）——宁可回「文档里没写」，也不给看着像的来源。</li>
+          <li><b>检索日志</b>：query、构造出的检索词、过滤条件、命中 id、耗时，每次一行。</li>
+          <li>切块按文档的二级/三级标题走，块首拼「文档标题 / 章节」面包屑；代码围栏里的 <code>#</code> 不会被当成标题切碎。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>PowerContext 负责「记忆」</h3>
+        <ul>
+          <li><b>每队一个 scope</b>：队名幂等创建（<code>idempotency_key=team:&lt;队名&gt;</code>），重复建档拿到同一个 scope。</li>
+          <li><b>四类记忆</b>：<code>track-choice</code> 选题、<code>progress</code> 进度、<code>blocker</code> 卡点、<code>note</code> 备注。</li>
+          <li><b>旧进度置 forgotten</b>：写新状态前把上一条评论区的旧记录 lifecycle 改成 <code>forgotten</code>，读回来只有一条有效，历史值不会冒充现状。</li>
+          <li><b>重启可读回</b>：数据在 <code>POWERCONTEXT_HOME</code> 磁盘上，杀掉服务再起，<code>scope_id</code> 与档案内容不变（这一条有真实子进程的单测）。</li>
+          <li><b>调用日志</b>：方法、路径、请求摘要、状态码、耗时，只记摘要不记全文。</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="flow-title">数据流</h3>
+    <ol class="flow">
+      <li><b>语雀文档</b><span>公开知识库 → <code>scripts/fetch_docs.py</code> 抓成带 front matter 的 Markdown 快照</span></li>
+      <li><b>切块</b><span>按标题切、加面包屑、推断赛道、算内容哈希</span></li>
+      <li><b>seekdb</b><span>增量 upsert；查询走 hybrid_search + 赛道过滤</span></li>
+      <li><b>命中片段</b><span>带 doc 标题 / 章节 / 原文链接 / 块 id</span></li>
+      <li><b>答案</b><span>LLM 生成（带 [n] 引用）或抽取式兜底</span></li>
+      <li><b>PowerContext</b><span>并行：队伍选题 / 进度 / 卡点 → 问答与待办用它限定赛道</span></li>
+      <li><b>日志</b><span>seekdb / powercontext / llm 三份 JSONL → 统计页与验收脚本读它</span></li>
+    </ol>
+  </section>
+
+  <section id="qoder" class="band">
+    <h2>用 Qoder 开发的四个阶段</h2>
+    <p class="note">
+      本项目通过 <strong>Qoder CLI</strong> 开发，提示词由 <strong>Claude</strong> 协助编写。
+      下面每个阶段都写了「实际发现的问题」——完整记录见仓库里的 <code>docs/QODER_DEV_LOG.md</code>。
+    </p>
+    <div class="steps">
+      <article class="card">
+        <h3><span class="num">1</span>M0–M1 · 设计 + seekdb 知识库</h3>
+        <p>先跑环境实测再写设计（默认 embedding 是 86MB 的 ONNX 英文模型、嵌入式 client 传 <code>database=</code> 会报错、同一目录可被两个进程读写），结论直接决定取舍。</p>
+        <ul class="bugs">
+          <li><b>语雀卡片占位块抢第一名</b>：卡片转出来的块正文几乎是空壳却排到 Top-1 → 清洗阶段丢弃卡片占位与空块，两条单测锁住。</li>
+          <li><b>代码围栏里的 <code>#</code> 注释被当标题</b>，切出碎块 → 只认围栏外的 H2/H3。</li>
+          <li><b>默认向量模型中文区分度差</b>（相似 0.335 vs 无关 0.306）→ 排序主要靠全文腿 + 服务端 RRF，这条限制原文写进 README，不藏。</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3><span class="num">2</span>M2–M3 · PowerContext 档案 + 问答</h3>
+        <p>先真机打一遍 PowerContext 再写客户端，字段名（<code>scope_id</code> / <code>kind</code> / <code>state</code> / 分页游标）是从实际响应里抄的，不是猜的。</p>
+        <ul class="bugs">
+          <li><b>反复改状态后档案堆历史值</b> → 旧 progress 置 <code>forgotten</code>，接口断言只剩一条有效记录。</li>
+          <li><b>PowerContext 挂了不能连知识库一起 500</b> → 档案类接口 503，检索照常，健康检查里分开报状态。</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3><span class="num">3</span>M4–M8 · 前端 / 部署 / 验收</h3>
+        <p>无构建的原生 JS 单页 + 单容器 Docker + 一条命令的端到端验收脚本（24 项，<code>--restart</code> 25 项）。</p>
+        <ul class="bugs">
+          <li><b>待办赛道串味</b>：MiniMax 赛题的待办引用了 AMD 的文档 → 检索按该赛题所属赛道限定，先写失败测试再修。</li>
+          <li><b>前端直接 innerHTML 会有 XSS</b> → 所有插值过转义、链接只允许 <code>http(s)</code>，挡住 <code>javascript:</code>。</li>
+          <li><b>验收断言自己写错过</b>（把赛道名列表当成赛题清单比）→ 判据要能被反例打穿。</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3><span class="num">4</span>M9–M10 · 语料同步 + 答案质量</h3>
+        <p>把语料变成「可脚本再生」，并且不再随仓库分发；顺带修抽取式答案里的表格噪声。</p>
+        <ul class="bugs">
+          <li><b>远端验收对中文队名抛 <code>UnicodeEncodeError</code></b>：进程内 TestClient 会自动做 IRI 编码所以本地全绿照不出来 → 编码放在传输层单点，5 条单测覆盖 URL 构造。</li>
+          <li><b><code>--restart</code> 原来是假阳性</b>：new 了一个新的服务对象，什么都没重启 → 改成重启应用自己持有的子进程，远端实例明确记 SKIP。</li>
+          <li><b>「清洗」抓回来的正文反而改坏两篇</b>：把字面 <code>\n</code> 还原、剥 <code>&lt;card&gt;</code>，动到了代码里的字面量 → 实测确认后删掉整个清洗函数，只留 <code>strip()</code>。</li>
+          <li><b>抽取式答案混进 <code>| :--- | :--- |</code> 和残缺的 <code>**</code></b> → 分隔行丢掉、表格行摊成「材料：要求」、落单的加粗符号去掉，5 条单测。</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="verify" class="band">
+    <h2>怎么验证它没在骗你</h2>
+    <div class="cols three">
+      <div class="card stat"><b>99</b><span>个单元测试，全部离线可跑<br><code>python -m pytest tests -q</code></span></div>
+      <div class="card stat"><b>25/25</b><span>项端到端验收通过<br><code>python scripts/verify.py --restart</code></span></div>
+      <div class="card stat"><b>约 430</b><span>个检索块，来自约 60 篇语雀文档<br>数字随文档更新略有变化</span></div>
+    </div>
+    <p class="note">验收步骤摘要（仓库 <code>samples/VERIFY.md</code> 里有完整实测输出）：</p>
+    <ol class="checklist">
+      <li>抓语料：<code>scripts/fetch_docs.py</code> 从公开页面生成 Markdown 快照 + 清单（语料不随仓库分发，目录空着时导入脚本与容器入口会自动先抓一次）。</li>
+      <li>导入：<code>scripts/ingest.py</code> 切块写进 seekdb，按内容哈希增量更新，打印块数与赛道分布。</li>
+      <li>起服务：<code>bash scripts/start.sh</code>（自动拉起 PowerContext 子进程），打开 <code>http://127.0.0.1:7860</code>。</li>
+      <li>跑验收：<code>scripts/verify.py</code> 逐项打印 PASS/FAIL 与实际字段——页面、健康、赛道、检索、建档、选题、进度、卡点、复读、问答、待办、统计、三份日志；<code>--restart</code> 多验一项「重启 PowerContext 后档案仍在」。</li>
+      <li>部署后复跑：同一个脚本 <code>--base-url http://&lt;host&gt;:7860</code> 对已部署实例验一遍，判据与本机同一口径。</li>
+    </ol>
+    <p class="note">
+      尚未实跑的也照写着：浏览器内的页面交互（开发机没有浏览器，只有 API 契约与静态资源可达的自动核对）、
+      魔搭创空间侧的构建（没有 docker daemon）。
+    </p>
+  </section>
+
+  <section id="use" class="band">
+    <h2>怎么用起来</h2>
+    <div class="cols two">
+      <div class="card">
+        <h3>本地跑</h3>
+        <pre><code>python -m pip install -r requirements.txt
+python scripts/ingest.py          # 语料为空会自动抓语雀
+bash scripts/start.sh             # http://127.0.0.1:7860</code></pre>
+        <p>PowerContext 由应用自己拉起，端口、数据目录都走环境变量，默认值即可。</p>
+      </div>
+      <div class="card">
+        <h3>容器跑</h3>
+        <pre><code>docker build -t saitong .
+docker run -d -p 7860:7860 \
+  -v "$PWD/docker-runtime:/app/.runtime" saitong</code></pre>
+        <p><b>挂卷是必需的</b>：seekdb 索引和队伍档案都在容器内 <code>$DATA_DIR</code>，不挂则实例回收后档案丢失。</p>
+      </div>
+    </div>
+    <ul class="links">
+      <li>代码仓库：<a href="https://github.com/timbermanQAQ/saitong">github.com/timbermanQAQ/saitong</a></li>
+      <li>在线体验：<a href="https://modelscope.cn/studios/Timberman/saitong">modelscope.cn/studios/Timberman/saitong</a>（魔搭创空间 Docker 部署，<b>部署中</b>，可用后再以此页为准）</li>
+      <li>设计文档：<code>docs/DESIGN.md</code>　开发记录：<code>docs/QODER_DEV_LOG.md</code>　验收记录：<code>samples/VERIFY.md</code></li>
+      <li>配置 LLM（可选）：<code>LLM_BASE_URL</code> / <code>LLM_API_KEY</code> / <code>LLM_MODEL</code>，三个变量缺任何一个都走抽取式答案，功能不缺。</li>
+    </ul>
+  </section>
+
+  <section id="effect" class="band">
+    <h2>使用效果</h2>
+    <div class="collecting">
+      <p class="big">收集中</p>
+      <p>
+        这一栏现在只有「代码写完、验收跑通」这一件事是确定的，其余还没有数据，所以不放数字。
+        比赛期间会补上：参赛队实际用它查过哪些问题、少翻了几个文档页、进度记录是否在换人接手时救回来。
+      </p>
+      <div class="slots">
+        <div class="slot">
+          <h3>访问统计</h3>
+          <p>待接入。应用自身已经在写三份 JSONL 日志（检索 / 档案调用 / LLM），
+             <code>/api/stats</code> 也已经有提问数、检索数、热门问题、赛道分布，接上即可显示。</p>
+        </div>
+        <div class="slot">
+          <h3>用户反馈</h3>
+          <p>待收集。想反馈请直接开仓库 Issue，或在使用后把「哪一条答案不对、出处是哪篇文档」发过来——
+             答案里每条都带原文链接，核对成本很低。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>赛题通 · 2026 OceanBase 数据库大赛参赛工具箱 · 页面为静态展示，数据以应用与仓库文档为准。</p>
+    <p>本页截图来自本机实际运行界面；文档快照来自语雀公开知识库 <code>oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio</code>。</p>
+  </div>
+</footer>
+</body>
+</html>

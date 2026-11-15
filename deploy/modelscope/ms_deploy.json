@@ -1,0 +1,17 @@
+{
+  "sdk": {
+    "type": "docker",
+    "port": 7860
+  },
+  "hardware": {
+    "type": "platform"
+  },
+  "environment_variables": {
+    "PORT": "7860",
+    "DATA_DIR": "/app/.runtime",
+    "LOG_DIR": "/app/logs",
+    "KB_EMBEDDING": "auto",
+    "POWERCONTEXT_AUTOSTART": "1",
+    "DEADLINE": "2026-11-19T00:00:00+08:00"
+  }
+}

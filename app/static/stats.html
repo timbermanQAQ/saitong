@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>赛题通 · 运行指标</title>
+<link rel="stylesheet" href="/ui/styles.css">
+</head>
+<body>
+<header>
+  <div><span class="logo">运行指标</span><span class="sub">谁在用、用在哪、能不能核对</span></div>
+  <div class="health" id="stamp">加载中…</div>
+</header>
+
+<main style="padding-top:10px">
+  <section class="panel on">
+    <div class="chips" id="counters"></div>
+    <h3>赛道分布（块数）</h3>
+    <div id="bars"></div>
+    <h3>最近调用日志</h3>
+    <div class="meta">三份 JSONL 各自成通道，可 download 或 tail 核对；这里只展示最近 10 行。</div>
+    <div id="logs"></div>
+    <div class="row" style="margin-top:12px">
+      <a href="/ui/">← 返回赛题通</a>
+      <a href="/api/logs/seekdb?limit=50" target="_blank">seekdb 原始日志</a>
+      <a href="/api/logs/powercontext?limit=50" target="_blank">powercontext 原始日志</a>
+      <a href="/api/logs/llm?limit=50" target="_blank">llm 原始日志</a>
+    </div>
+  </section>
+</main>
+<div id="toast"></div>
+
+<script>
+"use strict";
+const $ = (id) => document.getElementById(id);
+const esc = (v) => String(v ?? "").replace(/[&<>"']/g,
+  (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+async function get(path) {
+  const res = await fetch(path);
+  if (!res.ok) throw new Error(`${res.status} ${path}`);
+  return res.json();
+}
+
+function counters(s) {
+  const modes = Object.entries(s.modes || {}).map(([k, v]) => `${k} ${v}`).join(" / ") || "暂无提问";
+  return [
+    ["提问", s.ask_count], ["检索", s.search_count], ["队伍", s.team_count],
+    ["知识块", s.chunks], ["文档", s.docs], ["距截止", `${s.days_left} 天`],
+  ].map(([k, v]) => `<div class="card" style="flex:1;min-width:130px;margin:6px"><div class="meta">${esc(k)}</div>
+      <div style="font-size:22px"><b>${esc(v)}</b></div></div>`).join("")
+    + `<div class="meta">答案模式：${esc(modes)} · 生成模型${s.llm_enabled ? "已配置" : "未配置（抽取式）"}</div>`;
+}
+
+function bars(trackChunks) {
+  const rows = Object.entries(trackChunks || {}).sort((a, b) => b[1] - a[1]);
+  const max = Math.max(1, ...rows.map(([, v]) => v));
+  return rows.map(([name, value]) =>
+    `<div class="row" style="gap:10px;margin:4px 0">
+      <span style="width:110px;font-size:13px">${esc(name)}</span>
+      <span style="flex:1;background:#eef1f5;border-radius:4px">
+        <span style="display:block;height:12px;border-radius:4px;background:var(--brand);width:${(value / max * 100).toFixed(1)}%"></span>
+      </span><b style="width:46px;text-align:right">${value}</b></div>`).join("");
+}
+
+const FIELDS = {
+  seekdb: ["ts", "query", "mode", "n_hits", "elapsed_ms", "error"],
+  powercontext: ["ts", "event", "method", "path", "status_code", "ok", "error"],
+  llm: ["ts", "event", "model", "ok", "answer_chars", "elapsed_ms", "error"],
+};
+
+function logTable(channel, data) {
+  const keys = FIELDS[channel] || ["ts"];
+  const body = (data.items || []).slice().reverse().map((row) => `<tr>${keys.map((k) =>
+    `<td>${esc(k === "ts" ? String(row[k] || "").slice(11, 19) : row[k] ?? "")}</td>`).join("")}</tr>`).join("");
+  return `<details class="track" ${channel === "seekdb" ? "open" : ""}>
+    <summary>${esc(channel)} <span class="meta">共 ${data.total} 行 · 最近 ${Math.min(data.items.length, data.total)} 行</span></summary>
+    <div class="crumbs">${esc(data.path)}</div>
+    <table class="status"><thead><tr>${keys.map((k) => `<th>${esc(k)}</th>`).join("")}</tr></thead>
+      <tbody>${body || `<tr><td class="meta">还没有记录</td></tr>`}</tbody></table></details>`;
+}
+
+(async function load() {
+  try {
+    const [s, logs] = await Promise.all([
+      get("/api/stats"),
+      Promise.all(Object.keys(FIELDS).map((c) => get(`/api/logs/${c}?limit=10`))),
+    ]);
+    $("counters").innerHTML = counters(s);
+    $("bars").innerHTML = bars(s.track_chunks);
+    $("logs").innerHTML = logs.map((d) => logTable(d.channel, d)).join("");
+    $("stamp").textContent = `数据截止 ${new Date().toLocaleString("zh-CN")} · 截止日 ${s.deadline.slice(0, 10)}`;
+  } catch (err) {
+    $("stamp").innerHTML = `<span class="bad">加载失败：${esc(err.message)}</span>`;
+  }
+})();
+</script>
+</body>
+</html>

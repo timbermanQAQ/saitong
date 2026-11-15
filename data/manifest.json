@@ -1,0 +1,415 @@
+[
+ {
+  "file": "00_ix20uoszxhifnp4b.md",
+  "title": "2026年OceanBase数据库大赛",
+  "path": "2026年OceanBase数据库大赛",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/ix20uoszxhifnp4b",
+  "chars": 873
+ },
+ {
+  "file": "01_gp48z4pp0q3zg9b2.md",
+  "title": "FAQ - 大赛常见问题答疑",
+  "path": "2026年OceanBase数据库大赛 / FAQ - 大赛常见问题答疑",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/gp48z4pp0q3zg9b2",
+  "chars": 3326
+ },
+ {
+  "file": "02_ocqe6xv6mlgapq24.md",
+  "title": "赛题",
+  "path": "2026年OceanBase数据库大赛 / 赛题",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/ocqe6xv6mlgapq24",
+  "chars": 892
+ },
+ {
+  "file": "03_dbf6uzmwsuupp7hn.md",
+  "title": "算分规则",
+  "path": "2026年OceanBase数据库大赛 / 赛题 / 加赛部分 / 算分规则",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/dbf6uzmwsuupp7hn",
+  "chars": 2159
+ },
+ {
+  "file": "04_lg8enxlmwg69unt6.md",
+  "title": "赛题一：完成一个轻量向量数据库",
+  "path": "2026年OceanBase数据库大赛 / 赛题 / 加赛部分 / 赛题一：完成一个轻量向量数据库",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/lg8enxlmwg69unt6",
+  "chars": 16014
+ },
+ {
+  "file": "05_lz6ixow11mar233g.md",
+  "title": "赛题一：部署一个 seekdb",
+  "path": "2026年OceanBase数据库大赛 / 赛题 / 初赛部分 / OceanBase seekdb基础事件 / 赛题一：部署一个 seekdb",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/lz6ixow11mar233g",
+  "chars": 1708
+ },
+ {
+  "file": "06_xom0q8ni2ow8t9py.md",
+  "title": "赛题二：GitHub bug修复",
+  "path": "2026年OceanBase数据库大赛 / 赛题 / 初赛部分 / OceanBase seekdb基础事件 / 赛题二：GitHub bug修复",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/xom0q8ni2ow8t9py",
+  "chars": 1177
+ },
+ {
+  "file": "07_ugmhrcw9p21ppp66.md",
+  "title": "OceanBase seekdb内核",
+  "path": "2026年OceanBase数据库大赛 / 赛题 / 初赛部分 / OceanBase seekdb内核",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/ugmhrcw9p21ppp66",
+  "chars": 308
+ },
+ {
+  "file": "08_psu9fks8dexldoum.md",
+  "title": "赛题一：AI函数增强",
+  "path": "2026年OceanBase数据库大赛 / 赛题 / 初赛部分 / OceanBase seekdb内核 / 赛题一：AI函数增强",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/psu9fks8dexldoum",
+  "chars": 1939
+ },
+ {
+  "file": "09_gy2a66vag0028msk.md",
+  "title": "赛题二：文件即数据库",
+  "path": "2026年OceanBase数据库大赛 / 赛题 / 初赛部分 / OceanBase seekdb内核 / 赛题二：文件即数据库",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/gy2a66vag0028msk",
+  "chars": 2668
+ },
+ {
+  "file": "10_qenx4sy5s09h2t07.md",
+  "title": "赛题三：AI列",
+  "path": "2026年OceanBase数据库大赛 / 赛题 / 初赛部分 / OceanBase seekdb内核 / 赛题三：AI列",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/qenx4sy5s09h2t07",
+  "chars": 4647
+ },
+ {
+  "file": "11_za7cfo5cazcrihhq.md",
+  "title": "赛题四：全文索引调优",
+  "path": "2026年OceanBase数据库大赛 / 赛题 / 初赛部分 / OceanBase seekdb内核 / 赛题四：全文索引调优",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/za7cfo5cazcrihhq",
+  "chars": 3126
+ },
+ {
+  "file": "12_gp9hi8ikdnef8ryc.md",
+  "title": "PowerContext",
+  "path": "2026年OceanBase数据库大赛 / 赛题 / 初赛部分 / PowerContext",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/gp9hi8ikdnef8ryc",
+  "chars": 368
+ },
+ {
+  "file": "13_ygfg2iskh62zntl5.md",
+  "title": "赛题一：准备 PowerContext 仓库",
+  "path": "2026年OceanBase数据库大赛 / 赛题 / 初赛部分 / PowerContext / 赛题一：准备 PowerContext 仓库",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/ygfg2iskh62zntl5",
+  "chars": 2789
+ },
+ {
+  "file": "14_yt9ctvr4n9lc0p1l.md",
+  "title": "赛题二：CSV 行级采集与原始记录回查",
+  "path": "2026年OceanBase数据库大赛 / 赛题 / 初赛部分 / PowerContext / 赛题二：CSV 行级采集与原始记录回查",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/yt9ctvr4n9lc0p1l",
+  "chars": 5637
+ },
+ {
+  "file": "15_oi71gg4g80uda2ls.md",
+  "title": "赛题三：",
+  "path": "2026年OceanBase数据库大赛 / 赛题 / 初赛部分 / PowerContext / 赛题三：",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/oi71gg4g80uda2ls",
+  "chars": 5213
+ },
+ {
+  "file": "16_ohy6lqb9wshgmrar.md",
+  "title": "赛题四：财报 PDF 全文解析与证据页检索",
+  "path": "2026年OceanBase数据库大赛 / 赛题 / 初赛部分 / PowerContext / 赛题四：财报 PDF 全文解析与证据页检索",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/ohy6lqb9wshgmrar",
+  "chars": 5414
+ },
+ {
+  "file": "17_te7ynwpbeg0cbufs.md",
+  "title": "赛题五：HTTP 重排服务接入与跨批次排序",
+  "path": "2026年OceanBase数据库大赛 / 赛题 / 初赛部分 / PowerContext / 赛题五：HTTP 重排服务接入与跨批次排序",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/te7ynwpbeg0cbufs",
+  "chars": 4997
+ },
+ {
+  "file": "18_pw6pl9siofvh3h9k.md",
+  "title": "赛题六：上下文增量传输与完整重建",
+  "path": "2026年OceanBase数据库大赛 / 赛题 / 初赛部分 / PowerContext / 赛题六：上下文增量传输与完整重建",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/pw6pl9siofvh3h9k",
+  "chars": 5541
+ },
+ {
+  "file": "19_kv2g0mm2fdfdda7x.md",
+  "title": "赛题七：按新增来源条目数触发记忆处理",
+  "path": "2026年OceanBase数据库大赛 / 赛题 / 初赛部分 / PowerContext / 赛题七：按新增来源条目数触发记忆处理",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/kv2g0mm2fdfdda7x",
+  "chars": 4344
+ },
+ {
+  "file": "20_gt75mi3l407t2ccn.md",
+  "title": "赛题八：Embedding 并发请求合并与向量缓存",
+  "path": "2026年OceanBase数据库大赛 / 赛题 / 初赛部分 / PowerContext / 赛题八：Embedding 并发请求合并与向量缓存",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/gt75mi3l407t2ccn",
+  "chars": 4049
+ },
+ {
+  "file": "21_vru5ymzl6lmi701c.md",
+  "title": "赛题九：来源撤回后的记忆停用与恢复",
+  "path": "2026年OceanBase数据库大赛 / 赛题 / 初赛部分 / PowerContext / 赛题九：来源撤回后的记忆停用与恢复",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/vru5ymzl6lmi701c",
+  "chars": 4609
+ },
+ {
+  "file": "22_kcgxoqb2h9up4ufu.md",
+  "title": "赛题十：按查询和预算选择原文证据",
+  "path": "2026年OceanBase数据库大赛 / 赛题 / 初赛部分 / PowerContext / 赛题十：按查询和预算选择原文证据",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/kcgxoqb2h9up4ufu",
+  "chars": 4837
+ },
+ {
+  "file": "23_hqkh5u47mf5nv8r5.md",
+  "title": "赛题十一：seekdb 混合检索的单 SQL 候选查询",
+  "path": "2026年OceanBase数据库大赛 / 赛题 / 初赛部分 / PowerContext / 赛题十一：seekdb 混合检索的单 SQL 候选查询",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/hqkh5u47mf5nv8r5",
+  "chars": 4712
+ },
+ {
+  "file": "24_seebnbaoxot1b0tb.md",
+  "title": "AMD",
+  "path": "2026年OceanBase数据库大赛 / 赛题 / 初赛部分 / AMD",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/seebnbaoxot1b0tb",
+  "chars": 13650
+ },
+ {
+  "file": "25_qlqnoryzrs7gtqbw.md",
+  "title": "MiniMax",
+  "path": "2026年OceanBase数据库大赛 / 赛题 / 初赛部分 / MiniMax",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/qlqnoryzrs7gtqbw",
+  "chars": 3446
+ },
+ {
+  "file": "26_uygu3273xzlrcmrm.md",
+  "title": "Qoder",
+  "path": "2026年OceanBase数据库大赛 / 赛题 / 初赛部分 / Qoder",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/uygu3273xzlrcmrm",
+  "chars": 4564
+ },
+ {
+  "file": "27_kw9wfx4bu9pyvat9.md",
+  "title": "阶跃星辰",
+  "path": "2026年OceanBase数据库大赛 / 赛题 / 初赛部分 / 阶跃星辰",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/kw9wfx4bu9pyvat9",
+  "chars": 3771
+ },
+ {
+  "file": "28_lhfslihtnnb8yqh6.md",
+  "title": "Dify",
+  "path": "2026年OceanBase数据库大赛 / 赛题 / 初赛部分 / Dify",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/lhfslihtnnb8yqh6",
+  "chars": 5521
+ },
+ {
+  "file": "29_qp60miwsbk1mcgod.md",
+  "title": "高德地图",
+  "path": "2026年OceanBase数据库大赛 / 赛题 / 初赛部分 / 高德地图",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/qp60miwsbk1mcgod",
+  "chars": 2858
+ },
+ {
+  "file": "30_bt7u0qwwz84gt48g.md",
+  "title": "魔搭社区",
+  "path": "2026年OceanBase数据库大赛 / 赛题 / 初赛部分 / 魔搭社区",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/bt7u0qwwz84gt48g",
+  "chars": 851
+ },
+ {
+  "file": "31_ut82q2fcalep4y1r.md",
+  "title": "测试",
+  "path": "2026年OceanBase数据库大赛 / 测试",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/ut82q2fcalep4y1r",
+  "chars": 685
+ },
+ {
+  "file": "32_xkmkblbzlzk581ya.md",
+  "title": "算分规则",
+  "path": "2026年OceanBase数据库大赛 / 测试 / 算分规则",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/xkmkblbzlzk581ya",
+  "chars": 759
+ },
+ {
+  "file": "33_brxxufkegusa86hl.md",
+  "title": "比赛仓库地址",
+  "path": "2026年OceanBase数据库大赛 / 测试 / 比赛仓库地址",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/brxxufkegusa86hl",
+  "chars": 523
+ },
+ {
+  "file": "34_cedao0wehhx1gcg4.md",
+  "title": "判题实效性",
+  "path": "2026年OceanBase数据库大赛 / 测试 / 判题实效性",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/cedao0wehhx1gcg4",
+  "chars": 381
+ },
+ {
+  "file": "35_kr39e5xypy6mowvm.md",
+  "title": "课程",
+  "path": "2026年OceanBase数据库大赛 / 课程",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/kr39e5xypy6mowvm",
+  "chars": 1267
+ },
+ {
+  "file": "36_ya7d7dzr1etn1ncg.md",
+  "title": "第零讲：数据库大赛启动介绍",
+  "path": "2026年OceanBase数据库大赛 / 课程 / 第零讲：数据库大赛启动介绍",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/ya7d7dzr1etn1ncg",
+  "chars": 209
+ },
+ {
+  "file": "37_oaw0z31ywat2g8i5.md",
+  "title": "第一讲：AI 原生数据库与 seekdb 基础",
+  "path": "2026年OceanBase数据库大赛 / 课程 / 第一讲：AI 原生数据库与 seekdb 基础",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/oaw0z31ywat2g8i5",
+  "chars": 200
+ },
+ {
+  "file": "38_zhgyk0y0hvvlr28x.md",
+  "title": "企业第一讲：AMD",
+  "path": "2026年OceanBase数据库大赛 / 课程 / 企业第一讲：AMD",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/zhgyk0y0hvvlr28x",
+  "chars": 223
+ },
+ {
+  "file": "39_bcgddalclx582b2w.md",
+  "title": "第二讲：向量数据库与 RAG",
+  "path": "2026年OceanBase数据库大赛 / 课程 / 第二讲：向量数据库与 RAG",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/bcgddalclx582b2w",
+  "chars": 62
+ },
+ {
+  "file": "40_nkgfb81gd3kn5eq4.md",
+  "title": "企业第二讲：阶跃星辰",
+  "path": "2026年OceanBase数据库大赛 / 课程 / 企业第二讲：阶跃星辰",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/nkgfb81gd3kn5eq4",
+  "chars": 199
+ },
+ {
+  "file": "41_dg3euo1uy9e04ear.md",
+  "title": "第三讲：SQL×AI（AI Functions 的设计与执行）",
+  "path": "2026年OceanBase数据库大赛 / 课程 / 第三讲：SQL×AI（AI Functions 的设计与执行）",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/dg3euo1uy9e04ear",
+  "chars": 200
+ },
+ {
+  "file": "42_ygbglc5fx7otbs6a.md",
+  "title": "企业第三讲：高德地图",
+  "path": "2026年OceanBase数据库大赛 / 课程 / 企业第三讲：高德地图",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/ygbglc5fx7otbs6a",
+  "chars": 223
+ },
+ {
+  "file": "43_ve8gebq82bcapffk.md",
+  "title": "第四讲：本地文件即数据库（File SQL for AI Agent）",
+  "path": "2026年OceanBase数据库大赛 / 课程 / 第四讲：本地文件即数据库（File SQL for AI Agent）",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/ve8gebq82bcapffk",
+  "chars": 204
+ },
+ {
+  "file": "44_bparqh1vfsl6mlrm.md",
+  "title": "企业第四讲：dify",
+  "path": "2026年OceanBase数据库大赛 / 课程 / 企业第四讲：dify",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/bparqh1vfsl6mlrm",
+  "chars": 198
+ },
+ {
+  "file": "45_ahkxog2ggp212575.md",
+  "title": "第五讲：AI 列（模型驱动派生数据的自动维护）",
+  "path": "2026年OceanBase数据库大赛 / 课程 / 第五讲：AI 列（模型驱动派生数据的自动维护）",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/ahkxog2ggp212575",
+  "chars": 204
+ },
+ {
+  "file": "46_pt3hhtf7ci61qz91.md",
+  "title": "企业第五讲：原力灵机",
+  "path": "2026年OceanBase数据库大赛 / 课程 / 企业第五讲：原力灵机",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/pt3hhtf7ci61qz91",
+  "chars": 204
+ },
+ {
+  "file": "47_kyic625yep5wal4b.md",
+  "title": "第六讲：上下文工程概述",
+  "path": "2026年OceanBase数据库大赛 / 课程 / 第六讲：上下文工程概述",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/kyic625yep5wal4b",
+  "chars": 198
+ },
+ {
+  "file": "48_cs47urzu5wtpaxao.md",
+  "title": "企业第六讲： Qoder",
+  "path": "2026年OceanBase数据库大赛 / 课程 / 企业第六讲： Qoder",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/cs47urzu5wtpaxao",
+  "chars": 224
+ },
+ {
+  "file": "49_vm0ns7vly6so33n6.md",
+  "title": "第七讲：powercontext 的设计实现",
+  "path": "2026年OceanBase数据库大赛 / 课程 / 第七讲：powercontext 的设计实现",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/vm0ns7vly6so33n6",
+  "chars": 198
+ },
+ {
+  "file": "50_gpwrxihxgnmatqu6.md",
+  "title": "企业第七讲：魔搭",
+  "path": "2026年OceanBase数据库大赛 / 课程 / 企业第七讲：魔搭",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/gpwrxihxgnmatqu6",
+  "chars": 245
+ },
+ {
+  "file": "51_mq2b55nkyihg948q.md",
+  "title": "第八讲：powercontext案例场景和测评构建",
+  "path": "2026年OceanBase数据库大赛 / 课程 / 第八讲：powercontext案例场景和测评构建",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/mq2b55nkyihg948q",
+  "chars": 198
+ },
+ {
+  "file": "52_vw3hyno7t25ise4v.md",
+  "title": "企业第八讲：MiniMax",
+  "path": "2026年OceanBase数据库大赛 / 课程 / 企业第八讲：MiniMax",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/vw3hyno7t25ise4v",
+  "chars": 62
+ },
+ {
+  "file": "53_zvy6wc4l3cfbvzgi.md",
+  "title": "AMD  seekdb 部署上报失败修复方案",
+  "path": "2026年OceanBase数据库大赛 / 分享 / AMD  seekdb 部署上报失败修复方案",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/zvy6wc4l3cfbvzgi",
+  "chars": 3317
+ },
+ {
+  "file": "54_qs1povt8zbza6hts.md",
+  "title": "GitHub在大赛中的使用说明",
+  "path": "2026年OceanBase数据库大赛 / 分享 / GitHub在大赛中的使用说明",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/qs1povt8zbza6hts",
+  "chars": 4140
+ },
+ {
+  "file": "55_hgln7zgktka4kg1u.md",
+  "title": "seekdb 技术架构与核心能力",
+  "path": "2026年OceanBase数据库大赛 / 分享 / seekdb 技术架构与核心能力",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/hgln7zgktka4kg1u",
+  "chars": 10508
+ },
+ {
+  "file": "56_tlww4gb17vthm993.md",
+  "title": "seekdb 源码框架介绍与贡献上手指南",
+  "path": "2026年OceanBase数据库大赛 / 分享 / seekdb 源码框架介绍与贡献上手指南",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/tlww4gb17vthm993",
+  "chars": 25509
+ },
+ {
+  "file": "57_lcuknwgl955v8ou7.md",
+  "title": "AMD Radeon使用和部署seekdb",
+  "path": "2026年OceanBase数据库大赛 / 分享 / AMD Radeon使用和部署seekdb",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/lcuknwgl955v8ou7",
+  "chars": 6471
+ },
+ {
+  "file": "58_ui0umho6ntag6x04.md",
+  "title": "AMD环境处理",
+  "path": "2026年OceanBase数据库大赛 / 分享 / AMD环境处理",
+  "source_url": "https://oceanbase.yuque.com/org-wiki-obtech-vh7w9r/hc3pio/ui0umho6ntag6x04",
+  "chars": 4442
+ }
+]

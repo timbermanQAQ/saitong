@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# 本地凭据
+.env
+
+# 运行时数据（seekdb 索引、PowerContext SQLite）与审计日志
+.runtime/
+logs/
+
+# 语雀文档快照不随仓库分发（体积大、且会过期）；需要时由 scripts/fetch_docs.py 现抓。
+# data/manifest.json 保留，作为上一次导出的清单元数据。
+data/docs/
