@@ -10,7 +10,7 @@
 FROM python:3.13-slim-bookworm
 
 ARG REPO_URL=https://github.com/timbermanQAQ/saitong.git
-ARG REPO_REF=master
+ARG REPO_REF=main
 
 # git：克隆仓库；libstdc++6 / libgcc-s1：libseekdb.so 与 onnxruntime 的运行库
 # ca-certificates：克隆、调用 LLM 接口、抓语雀；tzdata：截止时间按 +08:00 计算
